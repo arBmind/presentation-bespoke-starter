@@ -1,10 +1,42 @@
 = Bespoke.js Starter Presentation
+:title: Nanan: Hello
+:subtitle: Hello
+:author: Andreas Reischuck
+:twitter: @arBmind
 :!sectids:
 :imagesdir: images
+:use-link-attrs:
+:title-separator: :
 
-== Topic Slide
+== Topic Slide 2
+
+[source, javascript]
+----
+function foobar(text) {
+  console.log(text):
+}
+foobar('It works with JavaScript!');
+----
+
+[.cue]
+****
+* return aus Lambda nicht möglich!
+****
+
+[%build]
+== Topic Slide 3
+
+[%build]
+[source.lang-cpp, cpp]
+----
+#include "stdio.h"
+void main(int argc) {
+    printf("Hello World\n");
+}
+----
 
 == Key Points
+
 [%build]
 * First point
 * Second point

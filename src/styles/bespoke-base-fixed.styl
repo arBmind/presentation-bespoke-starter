@@ -53,3 +53,55 @@
 
 .vanish  .bespoke-bullet-active:not(.bespoke-bullet-current)
   opacity 0
+
+.bespoke-progress-parent {
+  position absolute
+  height .1em
+  left 0
+  right 0
+  bottom 0
+}
+
+.bespoke-progress-bar {
+  -webkit-transition width $progress-transition-time ease
+  -moz-transition width $progress-transition-time ease
+  -ms-transition width $progress-transition-time ease
+  -o-transition width $progress-transition-time ease
+  transition width $progress-transition-time ease
+  position absolute
+  z-index 1
+  height 100%
+  background $progress-color
+}
+
+.bespoke-slidenumber {
+  position absolute
+  bottom 0
+  right 0
+  font-size 18pt
+  color #888
+}
+.bespoke-slidenumber-current {
+  padding: 0 5px;
+  float: left;
+}
+.bespoke-slidenumber-divider {
+  float: left;
+}
+.bespoke-slidenumber-overall {
+  padding: 0 5px;
+  float: left;
+  /* border-left: 4px solid #000 */
+}
+
+/* for transitioning to blackout */
+.bespoke-blackout .bespoke-blackout-overlay {
+  -webkit-transition: opacity 0.5s ease-in;
+          transition: opacity 0.5s ease-in;
+}
+
+/* for transitioning from blackout */
+.bespoke-blackout-overlay {
+  -webkit-transition: opacity 0.5s ease-in, visibility 0s linear 0.5s;
+          transition: opacity 0.5s ease-in, visibility 0s linear 0.5s;
+}
