@@ -1,19 +1,24 @@
 = Bespoke.js Starter Presentation
-:title: Nanan: Hello
-:subtitle: Hello
+:title: Nanan: Hello More
 :author: Andreas Reischuck
-:twitter: @arBmind
+:!twitter: @arBmind
+:!avatar: andreas.png
+:!organization: HicknHack Software GmbH
 :!sectids:
 :imagesdir: images
+:icons: font
 :use-link-attrs:
 :title-separator: :
+:codedir: code
 
-== Topic Slide 2
+Additional content for the title slide.
+
+== !Topic Slide 2
 
 [source, javascript]
 ----
 function foobar(text) {
-  console.log(text):
+  console.log(text);
 }
 foobar('It works with JavaScript!');
 ----
@@ -23,21 +28,18 @@ foobar('It works with JavaScript!');
 * return aus Lambda nicht möglich!
 ****
 
-[%build]
-== Topic Slide 3
+[.build.build-items]
+== ! 
 
-[%build]
-[source.lang-cpp, cpp]
+[source.lang-cpp%nested, cpp, indent=0]
+.example.cpp
 ----
-#include "stdio.h"
-void main(int argc) {
-    printf("Hello World\n");
-}
+include::{codedir}/intro/main.cpp[]
 ----
 
 == Key Points
 
-[%build]
+[%fit%build]
 * First point
 * Second point
 * Final point
@@ -46,3 +48,42 @@ void main(int argc) {
 image::html5.svg[]
 
 == The End
+
+[source.lang-ruby, ruby]
+----
+class NestedStack
+  def initialize tree
+    @stack = [tree]
+  end
+  def push
+    nested = []
+    @stack[-1] << nested
+    @stack << nested
+  end
+  def pop
+    @stack.pop
+  end
+  def pass l
+    @stack[-1] << l
+  end
+end
+def nested_array array, &block
+  tree = []
+  api = NestedStack.new tree
+  array.each do |l|
+    block.call api, l
+  end
+  tree
+end
+
+lines = ["a", ">", "b", ">", "c", "<", "<", "d"]
+nested_array(lines) do |a, l|
+  if l == ">"
+    a.push
+  elsif l == "<"
+    a.pop
+  else
+    a.pass l
+  end
+end
+----

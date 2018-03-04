@@ -10,30 +10,72 @@
 @require "prismjs/themes/prism.css"
 @require "prismjs/plugins/toolbar/prism-toolbar.css"
 
-pre.code-toolbar > .toolbar {
-    font-size .6em
-    top 0px
-    right 0px
-    opacity 1
-    span {
-        padding 0
-        color #555
-        font-size 1em
-        background none
-        box-shadow none
-        border-radius 0
-    }
-}
-pre[class*="language-"],
-code[class*="language-"] {
+pre.source
     text-shadow none
     border none
     box-shadow none
     padding .2em
     background none
-}
-pre[class*="language-"] {
     border 1px dashed #000
     border-left none
     border-right none
-}
+
+    > .toolbar
+        font-size .6em
+        top 0px
+        right 0px
+        opacity 1
+        span
+            padding 0
+            color #555
+            font-size 1em
+            background none
+            box-shadow none
+            border-radius 0
+
+    code
+        text-shadow none
+        border none
+        box-shadow none
+        padding .2em
+        background none
+
+        > b
+            display none
+    
+    pre.source
+        padding 0
+        margin 0
+        border none
+        overflow hidden
+        > .toolbar
+            display: none
+
+
+
+.conum[data-value]
+  display inline-block
+  background-color #333
+  border-radius 100%
+  text-align center
+  vertical-align text-top
+  font-size 60%
+  width 1.3em
+  height 1.3em
+  line-height 1.3em
+  font-style normal
+  font-weight bold
+  font-family monospace
+  &, *
+    color #fff !important
+  + b
+    display none
+  &::after
+    content attr(data-value)
+  pre &
+    position relative
+    top -1px
+  .colist &
+    vertical-align 0.5em
+    margin-right 0.5em
+

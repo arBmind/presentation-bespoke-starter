@@ -23,7 +23,8 @@ function prismjs() {
   require('prismjs/components/prism-cpp');
   require('prismjs/plugins/toolbar/prism-toolbar');
   require('prismjs/plugins/show-language/prism-show-language');
-  return function () {
+  require('prismjs/plugins/keep-markup/prism-keep-markup');
+  return function() {
     Prism.highlightAll();
   }
 }
@@ -33,7 +34,7 @@ bespoke.from({ parent: 'article.deck', slides: 'section' }, [
   cursor(),
   nav(),
   fullscreen(),
-  (scaleMethod ? scale(scaleMethod) : function (deck) { }),
+  (scaleMethod ? scale(scaleMethod) : function(deck) { }),
   overview({ columns: 3 }),
   bullets('.build, .build-items > *:not(.build-items)'),
   hash(),
